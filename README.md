@@ -1,0 +1,2 @@
+# genidash
+Simple generic dashboard
