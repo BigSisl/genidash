@@ -1,0 +1,28 @@
+{
+  "name": "dashboard",
+  "version": "0.0.1",
+  "description": "Small and simple generic dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BigSisl/genidash.git"
+  },
+  "author": "l.zuercher@tincan.ch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BigSisl/genidash/issues"
+  },
+  "homepage": "https://github.com/BigSisl/genidash#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^1.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "private": true
+}
