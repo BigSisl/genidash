@@ -6,3 +6,9 @@
  * - pages/ -> json source
  * - user_config/
  */
+var config = require('./package.json');
+var connect = require('connect');
+var serveStatic = require('serve-static');
+connect().use(serveStatic(__dirname + '/src')).listen(8000, function(){
+  console.log('Server running on 8000...');
+});

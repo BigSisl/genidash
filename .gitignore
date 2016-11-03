@@ -4,4 +4,4 @@ node_modules
 *.orig
 .idea
 temp.txt*
-dist
+dest
