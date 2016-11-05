@@ -17,7 +17,10 @@
   },
   "homepage": "https://github.com/BigSisl/genidash#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^1.2.0"
+    "cz-conventional-changelog": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "require-dir": "^0.3.1"
   },
   "config": {
     "commitizen": {

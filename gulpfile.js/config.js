@@ -5,7 +5,7 @@
 
 var pkg = require('../package.json').config;
 
-return {
+module.exports = {
   dest: pkg.dest,
   src: pkg.src,
   tests: pkg.tests
