@@ -10,7 +10,7 @@ var self = {};
  */
 self.index = function() {
   return gulp.src(
-    config.src + '/index.html'
+    config.src + '/**/*'
   )
   .pipe(gulp.dest(config.dest));
 }
