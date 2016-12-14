@@ -6,6 +6,7 @@ var Client = require('./Client.js');
 var Designer = require('./Design.js');
 var PageManager = require('./page/Page.js');
 var Navigation = require('./Navigation.js');
+var $ = require('jquery-browserify');
 
 class Bootstrap {
 
@@ -14,6 +15,7 @@ class Bootstrap {
     global.designer = this.designer = new Designer();
     global.pageManager = this.pageManager = PageManager;
     global.nav = this.nav = new Navigation();
+    global.$ = $;
 
     this.openPage();
   }

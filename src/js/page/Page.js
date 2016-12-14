@@ -54,7 +54,6 @@ class Page {
   static open(pageurl) {
     var found = null;
     $.each(pages, function(i, page) {
-      console.log(page);
       if(pageurl === page.getPageUrl()) {
         found = page;
       }

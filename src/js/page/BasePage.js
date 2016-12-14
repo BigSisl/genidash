@@ -11,7 +11,6 @@ function loadData(urls) {
 
       $.ajax(urls.json, {
         complete: function(xhr) {
-          console.log(xhr.responseText);
           var data = JSON.parse(xhr.responseText);
           dfd.resolve(html, data);
         }

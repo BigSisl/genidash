@@ -10,13 +10,19 @@
     <title>GeniDash</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <link data-themed-css rel="stylesheet" href="./css/main.css">
 
     <style type="text/css">
     body {
         padding-top: 50px;
     }
     </style>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
   <body>
     <header>
@@ -38,6 +44,18 @@
               <li data-nav="/usage" ><a href="#">Usage</a></li>
               <li data-nav="/canvas" ><a href="#">Canvas</a></li>
               <li data-nav="/contact" ><a href="#">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Change Theme<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a data-change-theme="DEFAULT" href="#">Default</a></li>
+                  <li><a data-change-theme="BLUE" href="#">Blue</a></li>
+                  <li><a data-change-theme="CYBORG" href="#">Cyborg theme</a></li>
+                  <li><a data-change-theme="DARKLY" href="#">Dark</a></li>
+                  <li><a data-change-theme="FLAT" href="#">Iphone Style</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>

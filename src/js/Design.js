@@ -8,10 +8,14 @@ var Cookies = require('./Cookies.js');
 
 
 const ELEMENT_SELECTOR = 'body';
+const CSS_LINK = 'link[data-themed-css]';
 
 const DESIGNES = {
-  'DEFAULT' : 'theme-default',
-  'BLUE' : 'theme-blue'
+  'DEFAULT' : './css/main.css',
+  'BLUE' : 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css',
+  'CYBORG' : 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css',
+  'DARKLY': 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css',
+  'FLAT': 'https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/flatly/bootstrap.min.css'
 };
 const DEFAULT_DESIGN = 'DEFAULT';
 
@@ -33,10 +37,16 @@ class Designer {
 
     save(this.design);
     this.render();
+
+    var self = this;
+    $('*[data-change-theme]').click(function() {
+       self.swap($(this).attr('data-change-theme'));
+    });
   }
 
   render() {
-    $(ELEMENT_SELECTOR).attr("class", DESIGNES[this.design]);
+    console.log(DESIGNES[this.design]);
+    $(CSS_LINK).attr('href', DESIGNES[this.design]);
   }
 
   swap(design) {

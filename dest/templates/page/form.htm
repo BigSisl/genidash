@@ -9,7 +9,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Name</label>
   <div class="col-md-4">
-  <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+  <input data-form id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
 
   </div>
 </div>
@@ -18,7 +18,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textinput">Lastname</label>
   <div class="col-md-4">
-  <input id="lastname" name="lastname" type="text" placeholder="" class="form-control input-md">
+  <input data-form id="lastname" name="lastname" type="text" placeholder="" class="form-control input-md">
 
   </div>
 </div>
@@ -29,7 +29,7 @@
   <div class="col-md-4">
     <div class="input-group">
       <span class="input-group-addon">@</span>
-      <input id="mail" name="mail" class="form-control" placeholder="" type="text">
+      <input data-form id="mail" name="mail" class="form-control" placeholder="" type="text">
     </div>
 
   </div>
@@ -39,7 +39,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="textarea">Content</label>
   <div class="col-md-4">
-    <textarea class="form-control" id="content" name="content">Some awesome content message</textarea>
+    <textarea data-form class="form-control" id="content" name="content">Some awesome content message</textarea>
   </div>
 </div>
 
@@ -53,3 +53,17 @@
 
 </fieldset>
 </form>
+
+<script>
+  $('button[name="singlebutton"]').click(function() {
+    event.preventDefault();
+
+    var values = {};
+
+    $('*[data-form]').each(function() {
+      values[$(this).attr('name')] = $(this).val();
+    })
+
+    alert('thank you for filling in the information, well nothing is going to happen, but here it is ... just in case:' + JSON.stringify(values));
+  });
+</script>
