@@ -17,8 +17,8 @@ class Navigation {
     self.elements = $(NAV_LI);
     self.active   = null;
 
-    $(NAV_LI).click(function() {
-      event.preventDefault();
+    $(NAV_LI).click(function(e) {
+      e.preventDefault();
       self.open($(this).attr('data-nav'));
     });
   }

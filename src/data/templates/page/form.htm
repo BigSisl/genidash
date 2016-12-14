@@ -55,7 +55,7 @@
 </form>
 
 <script>
-  $('button[name="singlebutton"]').click(function() {
+  $('button[name="singlebutton"]').click(function(event) {
     event.preventDefault();
 
     function validate(regexp, value, error) {
@@ -102,7 +102,6 @@
     var valid = true;
     $.each(validations, function(i, v) {
       if(valid) {
-        console.log('heyho', v.reg, v.val, v.error);
         if(!validate(v.reg, v.val, v.error)) {
           valid = false;
         }
