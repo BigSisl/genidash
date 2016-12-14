@@ -1,9 +1,9 @@
 
-var Page = require('./Page.js');
+var BasePage = require('./BasePage.js');
 
-class Home extends Page {
+class Home extends BasePage {
 
-  static getPageUrl() {
+  getPageUrl() {
     return '/';
   }
 

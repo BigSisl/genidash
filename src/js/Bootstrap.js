@@ -5,6 +5,7 @@
 var Client = require('./Client.js');
 var Designer = require('./Design.js');
 var PageManager = require('./page/Page.js');
+var Navigation = require('./Navigation.js');
 
 class Bootstrap {
 
@@ -12,6 +13,7 @@ class Bootstrap {
     global.client = this.client = new Client();
     global.designer = this.designer = new Designer();
     global.pageManager = this.pageManager = PageManager;
+    global.nav = this.nav = new Navigation();
 
     this.openPage();
   }
@@ -22,7 +24,7 @@ class Bootstrap {
 
   openPage() {
     this.pageManager.prepare();
-    this.pageManager.open('/');
+    this.nav.open('/');
   }
 }
 

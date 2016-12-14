@@ -23,14 +23,24 @@ self.data = function() {
   .pipe(gulp.dest(config.dest));
 }
 
+self.css = function() {
+  return gulp.src(
+    config.src + '/**/*.css'
+  )
+  .pipe(gulp.dest(config.dest));
+}
+
 gulp.task('copy:index', function() {
   return self.index();
 });
 gulp.task('copy:data', function() {
   return self.data();
 });
+gulp.task('copy:css', function() {
+  return self.css();
+});
 gulp.task('copy', function(cb) {
-  gulpSequence(['copy:data', 'copy:index'], cb);
+  gulpSequence(['copy:data', 'copy:index', 'copy:css'], cb);
 })
 
 module.exports = self;
