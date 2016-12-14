@@ -58,12 +58,59 @@
   $('button[name="singlebutton"]').click(function() {
     event.preventDefault();
 
+    function validate(regexp, value, error) {
+      var match = value.match(regexp);
+      console.log('match', match);
+      if(!value.match(regexp)) {
+        alert(error);
+        return false;
+      } else {
+        return true;
+      }
+    }
+
     var values = {};
 
     $('*[data-form]').each(function() {
       values[$(this).attr('name')] = $(this).val();
     })
 
-    alert('thank you for filling in the information, well nothing is going to happen, but here it is ... just in case:' + JSON.stringify(values));
+    // validate
+    var validations = [
+      {
+        val: values['content'],
+        reg: /^.+$/g,
+        error: 'please enter a value / content for the message'
+      },
+      {
+        val: values['mail'],
+        reg: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/g,
+        error: 'please enter a correct email adress'
+      },
+      {
+        val: values['name'],
+        reg: /^[a-zA-Z]+$/g,
+        error: 'please enter your name (only Alphabet accepted)'
+      },
+      {
+        val: values['lastname'],
+        reg: /^[a-zA-Z]+$/g,
+        error: 'please enter a last name (only Alphabet accepted)'
+      }
+    ];
+
+    var valid = true;
+    $.each(validations, function(i, v) {
+      if(valid) {
+        console.log('heyho', v.reg, v.val, v.error);
+        if(!validate(v.reg, v.val, v.error)) {
+          valid = false;
+        }
+      }
+    })
+
+    if(valid) {
+      alert('thank you for filling in the information, well nothing is going to happen, but here it is ... just in case:' + JSON.stringify(values));
+    }
   });
 </script>
