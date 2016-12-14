@@ -1,13 +1,15 @@
 var gulp = require('gulp');
-var browserify = require('gulp-browserify');
- 
+
+var config          = require('../config.js'),
+    browserify = require('gulp-browserify');
+
 // Basic usage
-gulp.task('scripts', function() {
+gulp.task('browserify', function() {
     // Single entry point to browserify
-    gulp.src('src/js/app.js')
+    gulp.src(config.src + '/app.js')
         .pipe(browserify({
           insertGlobals : true,
           debug : !gulp.env.production
         }))
-        .pipe(gulp.dest('./build/js'))
+        .pipe(gulp.dest(config.dest));
 });

@@ -8,10 +8,20 @@
 class Fetcher {
   cached = []
 
-  constructor() {
+  constructor(page) {
 
   }
 
+  loadConfig() {
+    console.log('load config')
+  }
+
+  /**
+   * Renders the page
+   */
+  render(target) {
+
+  }
 }
 
 class FetcherCache {
@@ -19,6 +29,9 @@ class FetcherCache {
 
   }
 
+  /**
+   * getData
+   */
   getData() {
 
   }
@@ -27,3 +40,5 @@ class FetcherCache {
 
   }
 }
+
+module.exports = Fetcher;
