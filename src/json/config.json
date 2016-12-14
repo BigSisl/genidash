@@ -1,9 +1,0 @@
-{
-  "templates": "/templates",
-  "pages": [
-    "templates/home/home.json"
-  ],
-  "widgets": [
-    "templates/widgets/local/local.json"
-  ]
-}
