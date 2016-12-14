@@ -9,21 +9,19 @@ const STORAGE_NAME = 'user_storage';
 class Client {
 
   constructor() {
-    this.config = {
-      
+    var conf = Cookies.get(STORAGE_NAME);
+    this.config = conf ? JSON.parse(conf) : {
+
     };
-
-    console.log(Cookies.get(STORAGE_NAME));
-
-    console.log('Cookies: ', Cookies);
   }
 
-  save() {
+  save(config) {
+    this.config = config ? config : this.config;
     Cookies.set(STORAGE_NAME, JSON.stringify(this.config), 5);
   }
 
-  loadData() {
-
+  get() {
+    return this.config;
   }
 
 }

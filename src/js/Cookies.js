@@ -8,6 +8,9 @@ class Cookies {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+ d.toUTCString();
+
+    cvalue = cvalue.replace(";",  "U+003B");
+
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
 
@@ -20,7 +23,7 @@ class Cookies {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            return c.substring(name.length,c.length);
+            return c.substring(name.length,c.length).replace("U+003B", ";");
         }
     }
     return "";

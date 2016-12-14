@@ -7,11 +7,11 @@
     "content": "Hello World"
   },
   "event": {
-    "trigger": {
+    "trigger": [
       "*.counter"
-    },
-    "listen": {
+    ],
+    "listen": [
       "*.counter"
-    }
+    ]
   }
 }
